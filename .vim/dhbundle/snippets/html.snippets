@@ -1,0 +1,42 @@
+# these don't seem to be working properly for some reason...
+snippet divclear
+	<div class="clear">&nbsp;</div>
+
+snippet errorbox
+	{{${1:num_errors}}}
+		[[errorbox_head]]
+			${2}
+		[[errorbox_foot]]
+	{{/${1}}}
+	${3}
+
+snippet successbox
+	{{${1:success}}}
+		[[successbox_head]]
+			${2}
+		[[successbox_foot]]
+	{{/${1}}}
+
+snippet errordiv
+	{{err_${1:error}}}<div class="error">${2}</div>{{/err_${1}}}
+	${3}
+
+snippet formfield
+	<div class="clear">&nbsp;</div>
+	<label for="${1:id}">${2:label}</label>
+	<input type="text" name="${1}" id="${1}" value="{{${1}}}--${1}--{{/${1}}}" />
+	${3}
+
+snippet infoboxs
+	[[infobox_head:title=${1}]]
+		${2}
+	[[infobox_foot]]
+	${3}
+
+snippet isk
+	<input type="hidden" name="security_key" value="--security_key" />
+
+snippet usk
+	&security_key=--security_key--
+
+

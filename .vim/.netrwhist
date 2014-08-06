@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/jordan/repo/pkg-api/app/package'
+let g:netrw_dirhist_2='/home/jordan/repo/pkg-api/flask'
+let g:netrw_dirhist_3='/home/jordan/repo/pkg-api/app'
+let g:netrw_dirhist_4='/home/jordan/repo/dreamstack/chef-environments'
+let g:netrw_dirhist_5='/home/jordan/cookbooks/nova/recipes'
+let g:netrw_dirhist_6='/home/jordan/cookbooks/nova/templates/default'
+let g:netrw_dirhist_7='/home/jordan/blah'

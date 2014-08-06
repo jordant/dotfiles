@@ -1,0 +1,88 @@
+# some common shortcuts
+snippet nds
+	Ndn::Dreamhost::Service${1:::}${2}
+
+snippet ol
+	Ndn::${1:Dreamhost}::${2:Domain}->Load({ ${3:domain} => '${4}'})${5}
+
+snippet ndb
+	my $${1:db} = Ndn::Common::Db->new('${2:dreamhost}');
+
+snippet oq
+	Ndn::${1:Dreamhost}::${2:Machine}->fetchall_query(${3}){$4}
+
+snippet schedule
+	&Ndn::Dreamhost::Service::Schedule("${1:service}", "${2:home}", "${3:command}", undef, undef, "${1}", undef, undef, {priority => ${4:5}});
+	${5}
+
+
+
+
+
+
+
+# nza package boilerplate
+snippet nza
+	package Ndn::${1:Dhwebpanel}::${2:Tab}::${3:Subtab};
+
+	use Ndn::Common::Nza;
+
+	use base qw(Ndn::Common::Nza);
+
+	use vars '@steps \$debug';
+	@steps = qw (Index ${4});
+	$debug = 1;
+
+	sub title {
+		my $self = shift || return;
+		$self->{'title'} = '${5}';
+	}
+
+	${6}
+
+# nza step boilerplate
+snippet nzs
+	#---------------------------------------------------------------------- 
+
+	package Ndn::${1:Dhwebpanel}::${2:Tab}::${3:Subtab}::${4:Step};
+
+	use Ndn::Common;
+	use Ndn::Common::Nza::Step;
+	${5}
+
+	use base qw(Ndn::Common::Nza::Step);
+
+	use vars '@query_vars @new_vars @session_vars @next_steps @templates';
+	@query_vars = qw();
+	@new_vars = qw();
+	@session_vars = qw();
+	@next_steps = qw();
+	@templates = qw();
+
+	sub Display {
+		my $session = $context->session;
+		my $query = $context->query;
+		my $Person = $session->Person;
+		my $Account = $context->data->{'account'};
+		my $vals = {};
+
+		return $vals;
+	}
+
+	sub CheckInput {
+		my $errors = {};
+
+		return $errors if $errors;
+		return {};
+	}
+
+	sub Do {
+		
+		return 1;
+	}
+
+	sub StartOver {
+		my $vals = {};
+
+		return $vals;
+	}		
