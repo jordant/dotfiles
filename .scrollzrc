@@ -1,0 +1,22 @@
+STAMP MAX
+          alias wc {
+             if ([$0]==[]) {
+                echo $scrollz_string Usage : /WC [#]channel
+             }
+             {
+                if ([$left(1 $0)]!=[#]) {^assign winchan #$0}
+                {^assign winchan $0}
+                echo $scrollz_string Creating new window for channel $winchan
+                window new bind $winchan
+                j $winchan
+                window hide
+             }
+             ^assign -winchan
+          }
+
+/log on
+/nick jordandh
+/chanlog on *
+/wc #openstack-cinder
+/wc #openstack-neutron
+/wc #dreamcompute

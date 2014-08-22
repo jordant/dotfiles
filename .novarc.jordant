@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# With the addition of Keystone, to use an openstack cloud you should
+# authenticate against keystone, which returns a **Token** and **Service
+# Catalog**.  The catalog contains the endpoint for all services the
+# user/tenant has access to - including nova, glance, keystone, swift.
+#
+# *NOTE*: Using the 2.0 *auth api* does not mean that compute api is 2.0.  We
+# will use the 1.1 *compute api*
+#export OS_AUTH_URL=https://keystone.dream.io/v2.0
+export OS_AUTH_URL=https://keystone.dream.io/v2.0/
+
+# With the addition of Keystone we have standardized on the term **tenant**
+# as the entity that owns the resources.
+export OS_TENANT_ID=29c79f394b2946f1a0f8446d715dc301
+export OS_TENANT_NAME="jordan-dev"
+
+# In addition to the owning entity (tenant), openstack stores the entity
+# performing the action as the **user**.
+export OS_USERNAME=jordant
+
+# With Keystone you pass the keystone password.
+#echo "Please enter your OpenStack Password ($OS_USERNAME): "
+read -s OS_PASSWORD_INPUT
+export OS_PASSWORD=$OS_PASSWORD_INPUT
+
+
+export OS_NIC="5ef0358f-9403-4f7b-9151-376ca112abf7"
+export OS_KEYNAME="bootstrap"
+#export OS_IMAGE_ID="7ec57184-14ec-4cb2-8145-2374bf877586"
+export OS_IMAGE_ID="8363ff61-55a8-4d4f-9867-fb913e4e5e49" # trusty
+#export OS_FLOATING_POOL="public-110"
+export OS_AZ="iad-1"
+
+export GRAPHITE_HOST="10.64.140.42"

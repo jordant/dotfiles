@@ -1,0 +1,5 @@
+export OS_AUTH_URL=https://keystone.dream.io/v2.0/
+export OS_TENANT_ID=29c79f394b2946f1a0f8446d715dc301
+export OS_TENANT_NAME="jordan-dev"
+export OS_USERNAME=jordant
+export OS_PASSWORD=
